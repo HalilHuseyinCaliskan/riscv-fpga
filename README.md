@@ -158,3 +158,12 @@ void main(){
 
 }
 ```
+
+<h3 align="left">5. Simülasyon Testleri</h3>
+
+<p align="justify">Tüm simülasyonlar Vivado üzerinden yapılmıştır. Bu sayede hangi sat sinyalinin yükselen kenarında hangi register'a veri yazzıldığı veya hangi sinyalin lojik = 1 olduğu görülebilmiştir. Figure 9'da Control Unit tarafından üretilen request ve Control Unit tarafından FSM'nin anlık durumuna karar vermesi için kullanılan acknowledge sinyallerinin zaman diyagramı gösterilmiştir. Her bir request sinyalinin ardından gelen yükselen kenarda o request sinyaline ait acknowledge sinyali lojik = 1 olmaktadır. Bu Control Unit'de tasarlanan FSM'nin temel çalışma mekanizmasıdır.</p>
+
+<div align="center">
+    <img src="images/sim_request_ack.png" width=1000 height=600>
+    <p><em>Figure 9. Control Unit'in Kullandığı Request ve Acknowledge Sinyallerine Ait Zaman Diyagramının Gösterimi</em></p>
+</div>
