@@ -191,7 +191,7 @@ void main(){
     <img src="images/imp_fpga.png" width=300 height=300>
     <p><em>Figure 14. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
     <img src="images/imp_fpga2.png" width=600 height=600>
-    <p><em>>Figure 15. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
+    <p><em>Figure 15. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
     <img src="images/imp_fpga3.png" width=600 height=600>
-    <p><em>>Figure 16. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
+    <p><em>Figure 16. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
 </div>
