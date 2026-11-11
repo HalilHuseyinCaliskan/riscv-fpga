@@ -32,7 +32,6 @@ architecture Behavioral of data_ram is
     signal rd_address_temp : std_logic_vector(4 downto 0) := (others => '0');
     signal register_file_write_enable_temp : std_logic := '0';
     
-    -- Senkronizasyon için ara sinyaller (Registers)
     signal rdata_reg : std_logic_vector(31 downto 0) := (others => '0');
     signal rd_address_reg : std_logic_vector(4 downto 0) := (others => '0');
 
