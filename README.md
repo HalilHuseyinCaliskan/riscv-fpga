@@ -1,4 +1,4 @@
-<h1 align="center">Artix-7 FPGA Tabanlı 32-Bit RISC-V CPU Tasarımı, Simülasyonu ve RTL Doğrulaması</h1>
+<h2 align="center">Artix-7 FPGA Tabanlı 32-Bit RISC-V CPU Tasarımı, Simülasyonu ve RTL Doğrulaması</h2>
 
 <h3 align="left">1. Giriş</h3>
 
@@ -14,6 +14,13 @@
 
 <p align="justify">Hem Instruction Memeory hem de Data Memory, sözcük adresleme (word addressable) olarak tasarlanmıştır. Bayt adresleme ile tasarlanmadığı için bellekteki baytların diziliminin Little-Endian veya Big-Endian mı olacağı ile ilgili bir problem ile karşılaşılmamıştır. Ek olarak, CPU için 3 farklı bus tasarlanmıştır: Data Bus, Address Bus ve Control Bus.</p>
 
-<p align="justify">Instruction Decoder toplamda 17 farklı RISC-V komutunu decode edebilmekte olup ALU da decode edilen veriler üzerine 17 farklı işlem yapabilmektedir. Hangi komutların decode edildiği ve hangi buyruk türüne sahip olduğu Tablo 1'de gösterilmiştir.</p>
+<p align="justify">Instruction Decoder toplamda 17 farklı RISC-V komutunu decode edebilmekte olup ALU da decode edilen veriler üzerine 17 farklı işlem yapabilmektedir. Toplamda 5 farklı Buyruk (R, I, S, B, J) türüne sahip komutlar decode edilebilemkte olup RISC-V'ın I ve M uzantılarını desteklemektedir. Hangi komutların decode edildiği ve hangi buyruk türüne sahip olduğu Tablo 1'de gösterilmiştir.</p>
+
+<div align="center">
+    <img src="images/riscv_komut.png" width=600 height=600>
+    <p><em>Figure 1. Çalıştırılabilir RISC-V Komutları ve Buyruk Türleri</em></p>
+</div>
+
+<p align="justify">Control Unit üzerinde tasarlanan FSM; Fetch, Decode, Execute ve Write Back işlemleri için gereken kontrol sinyallerini üretlebilmektedir. Ürettiği bu kontrol sinyallerini de Control Bus üzerinden diğer parçalara (component) gönderebilmektedir.</p>
 
 <p align="justify">Sentezleme, Place ve Route işlemlerinden sonra oluşan Bitsream dosyası FPGA içerisine yüklendiği ve RTL tasarımın doğrudan FPGA'ye entegre ediliği herhangi bir silikona entegre edilmediği için hard-core değil soft-core CPU tasarımı yapılmıştır.</p>
