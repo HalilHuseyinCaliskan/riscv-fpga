@@ -23,11 +23,11 @@
 
 <p align="justify">Control Unit üzerinde tasarlanan FSM; Fetch, Decode, Execute ve Write Back işlemleri için gereken kontrol sinyallerini üretlebilmektedir. Ürettiği bu kontrol sinyallerini de Control Bus üzerinden diğer parçalara (component) gönderebilmektedir.</p>
 
-<p align="justify">Sentezleme, Place ve Route işlemlerinden sonra oluşan Bitsream dosyası FPGA içerisine yüklendiği ve RTL tasarımın doğrudan FPGA'ye entegre ediliği herhangi bir silikona entegre edilmediği için hard-core değil soft-core CPU tasarımı yapılmıştır.</p>
+<p align="justify">Sentezleme, Place ve Route işlemlerinden sonra oluşan Bitsream dosyası FPGA içerisine yüklendiği, RTL tasarımın doğrudan FPGA'ye entegre ediliği ve tasarımın herhangi bir silikona entegre edilmediği için hard-core değil soft-core CPU tasarımı yapılmıştır.</p>
 
 <h3 align="left">3. Komut Döngüsü (Instruction Cycle)</h3>
 
-<p align="justify">Basys3 Geliştirme Kartında bulunan dahili 100MHz'lik osilatör ile kare dalga şeklindeki clock sinyali üretilir. Üretilen bu clock sinyali, Clock Wizard IP Core (MMCM) sayeinde 50MHz'e düşürülür. Clock sinyali CPU'nun içeriindeki tüm parçalara ulaşır ancak o parçada herhngi bir işelmin yapılabilmesi gerekli kontrol sinyallerinin aktif (lojik = 1) seviyesinde olması gerekmetedir. Control Unit'den hangi CPU parçasının çalışacağını gösteren kontrol sinyalleri (request) üretilir ve o anda çalışan CPU parçasının işi bitince component tarafından üretilen onay sinyali (acknowledge) ile FSM içerindeki diğer duruma geçiş yapılır. Figure 1'de Control Unit'in lojik tasarımı gösterilmiştir.</p>
+<p align="justify">Basys3 Geliştirme Kartında bulunan dahili 100MHz'lik osilatör ile kare dalga şeklindeki clock sinyali üretilir. Üretilen bu clock sinyali, Clock Wizard IP Core (MMCM) sayeinde 50MHz'e düşürülür. Clock sinyali CPU'nun içerisindeki tüm parçalara ulaşır ancak o parçada herhngi bir işelmin yapılabilmesi gerekli kontrol sinyallerinin aktif (lojik = 1) seviyesinde olması gerekmetedir. Control Unit'den hangi CPU parçasının çalışacağını gösteren kontrol sinyalleri (request) üretilir ve o anda çalışan CPU parçasının işi bitince component tarafından üretilen onay sinyali (acknowledge) ile FSM içerindeki diğer duruma geçiş yapılır. Figure 1'de Control Unit'in lojik tasarımı gösterilmiştir.</p>
 
 <div align="center">
     <img src="images/control_unit.png" width=800 height=700>
@@ -176,7 +176,7 @@ void main(){
 
 <h3 align="left">6. Statik Zaman Analizi Testleri</h3>
 
-<p align="justify">Simülasyon testleri tasarımı yapılan lojik devrelerin istenilen saat frekansında çalaışıp çalaışmayacağını göstermektedir. Statik Zaman Analizi kapsamında Flip-Flop'lar da metastability durumunun tespiti için kullanılan iki farklı metrik bulunmaktadır: Setup Time ve Hold Time. Herhangi bir metastability durumun oluşmaması için verinin bir sonraki saat sinyalinden daha önce bir süre de FLip-Flop'un kapısına gelmesi gerekir (Setup Time). Herhangi bir metastability durumunun oluşmaması için verinin saat sinyali Flip-Flop'un kapısına geldikten en az ne kadar süre daha Flip-FLop'un giriş bacağında sabit kalması gerekir (Hold Time). Figure 13'de Statik Zaman Analizi'ne ait testlerin başarıyla geçildiği görülmektedir. Setup Time için örnek vermek gerekirse tasarımdaki en yavaş veri yolu bile gereken süreden yaklaşık 5 ns daha erken Flip-FLop'un kapısına gelmiştir.</p>
+<p align="justify">Statik Zaman Analizi testleri tasarımı yapılan lojik devrelerin istenilen saat frekansında çalışıp çalışamayacağını göstermektedir. Statik Zaman Analizi kapsamında Flip-Flop'lar da metastability durumunun tespiti için kullanılan iki farklı metrik bulunmaktadır: Setup Time ve Hold Time. Herhangi bir metastability durumun oluşmaması için verinin bir sonraki saat sinyalinden daha önce bir süre de Flip-Flop'un kapısına gelmesi gerekir (Setup Time). Herhangi bir metastability durumunun oluşmaması için verinin saat sinyali Flip-Flop'un kapısına geldikten en az ne kadar süre daha Flip-FLop'un giriş bacağında sabit kalması gerekir (Hold Time). Figure 13'de Statik Zaman Analizi'ne ait testlerin başarıyla geçildiği görülmektedir. Setup Time için örnek vermek gerekirse tasarımdaki en yavaş veri yolu bile gereken süreden yaklaşık 5 ns daha erken Flip-FLop'un kapısına gelmiştir.</p>
 
 <div align="center">
     <img src="images/sta_test.png" width=600 height=600>
