@@ -161,9 +161,15 @@ void main(){
 
 <h3 align="left">5. Simülasyon Testleri</h3>
 
-<p align="justify">Tüm simülasyonlar Vivado üzerinden yapılmıştır. Bu sayede hangi sat sinyalinin yükselen kenarında hangi register'a veri yazzıldığı veya hangi sinyalin lojik = 1 olduğu görülebilmiştir. Figure 9'da Control Unit tarafından üretilen request ve Control Unit tarafından FSM'nin anlık durumuna karar vermesi için kullanılan acknowledge sinyallerinin zaman diyagramı gösterilmiştir. Her bir request sinyalinin ardından gelen yükselen kenarda o request sinyaline ait acknowledge sinyali lojik = 1 olmaktadır. Bu Control Unit'de tasarlanan FSM'nin temel çalışma mekanizmasıdır.</p>
+<p align="justify">Tüm simülasyonlar Vivado üzerinden yapılmıştır. Bu sayede hangi sat sinyalinin yükselen kenarında hangi register'a veri yazzıldığı veya hangi sinyalin lojik = 1 olduğu görülebilmiştir. Figure 9'da Control Unit tarafından üretilen request ve Control Unit tarafından FSM'nin anlık durumuna karar vermesi için kullanılan acknowledge sinyallerinin zaman diyagramı gösterilmiştir. Her bir request sinyalinin ardından gelen yükselen kenarda o request sinyaline ait acknowledge sinyali lojik = 1 olmaktadır. Bu Control Unit'de tasarlanan FSM'nin temel çalışma mekanizmasıdır. Figure 10'da her bir komut için Instruction Decoder'ın ürettiği ve ALU'nun hangi komuta ait işlemi yapacağını gösteren enable sinyallerinin zaman diyagramı gösterilmiştir. Figure 12'de yukarıda gösterilen ve çalışması hedeflenilen assebmly kodunun son komutuna olan (sw t4, 20(t0)) komutuna ait zaman diyagramı gösterilmiştir. Eğerki yapılan CPU tasarımı doğru ise tüm işlemler sonucunda S_sw komutu lojik = 1 olmalı, Data Memery'e ait 0x18 adresteki hücreye 32 bitlik 0x00000f30 verisi yazılmalıdır. Bu simülasyona göre de bu durumun doğru bir şekilde yapıldığı görülmüştür.</p>
 
 <div align="center">
     <img src="images/sim_request_ack.png" width=1000 height=600>
     <p><em>Figure 9. Control Unit'in Kullandığı Request ve Acknowledge Sinyallerine Ait Zaman Diyagramının Gösterimi</em></p>
+    <img src="images/sim_decode.png" width=1000 height=600>
+    <p><em>Figure 10. Her Bir Komutta Instruction Decoder Tarafından  Decode Edilen Sinyallere Ait Zaman Diyagramının Gösterimi</em></p>
+    <img src="images/sim_alu.png" width=1000 height=600>
+    <p><em>Figure 11. Register File, ALU ve Data Memoey Arasındaki Veri Transferlerine Ait Zaman Diyagramının Gösterimi</em></p>
+    <img src="images/sim_final.png" width=1000 height=600>
+    <p><em>Figure 12. RISC-V Assembly Koduna Ait Son Komuta Ait Zaman Diyagramının Gösterimi</em></p>
 </div>
