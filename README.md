@@ -30,14 +30,14 @@
 <p align="justify">Basys3 Geliştirme Kartında bulunan dahili 100MHz'lik osilatör ile kare dalga şeklindeki clock sinyali üretilir. Üretilen bu clock sinyali, Clock Wizard IP Core (MMCM) sayeinde 50MHz'e düşürülür. Clock sinyali CPU'nun içeriindeki tüm parçalara ulaşır ancak o parçada herhngi bir işelmin yapılabilmesi gerekli kontrol sinyallerinin aktif (lojik = 1) seviyesinde olması gerekmetedir. Control Unit'den hangi CPU parçasının çalışacağını gösteren kontrol sinyalleri (request) üretilir ve o anda çalışan CPU parçasının işi bitince component tarafından üretilen onay sinyali (acknowledge) ile FSM içerindeki diğer duruma geçiş yapılır. Figure 1'de Control Unit'in lojik tasarımı gösterilmiştir.</p>
 
 <div align="center">
-    <img src="images/control_unit.png" width=600 height=600>
+    <img src="images/control_unit.png" width=800 height=700>
     <p><em>Figure 1. Control Unit'e Ait Lojik Devre Tasarımı</em></p>
 </div>
 
 <p align="justify">Program Counter tamamem senkron çalışmaktadır bir diğer deyişle Program Counter içeriindeki D Flip-Flop'ların tetiklenmesi için sadece Clock sinyalinin yükselen kenarı kullanılmakta olup herhangi bir asenkron sinyal kullanılmamaktadır. Control Unit'den çıkan request sinyali Program Counter (PC)'a ulaşır. Eğer herhangi bir dallanma emri yok ise PC'deki mevcut değere +4 eklenir ve bir sonraki komuta geçilir. Program Counter kendi üzerine düşen işi yaptıktan sonra Control Unit'e acknowledge sinyali gönderir ve FSM içerisindeki bir sonraki duruma geçiş yapılır. Figure 2'de Control Unit'in lojik tasarımı gösterilmiştir.</p>
 
 <div align="center">
-    <img src="images/program_counter.png" width=600 height=600>
+    <img src="images/program_counter.png" width=800 height=700>
     <p><em>Figure 2. Program Counter'a Ait Lojik Devre Tasarımı</em></p>
 </div>
 
@@ -58,14 +58,14 @@
 <p align="justify">Instruction Register'dan çıkan 32 bitlik binary komut Instruction Decoder'da decode edilmektedir. 32 bit uzunluktaki binary komut temel lojik kapılar özellikle de AND ve NOT kapıları ile decode edilmiştir. RISC-V'de gelen komutun hangi buyruk türüne ait olduğu LSB'den başlayan ilk 7 bit belirlemektedir. Hangi buyruk türüne ait olduğu belirlenen komutun hangi işlemi (toplama, çarpma, veri yükleme vb..) yaptığı ise funct3 ve funct7 kısımları belirlemektedir. 32 bitlik bu komutun içerisinde aynı zamanda Register File'da hangi adresteki registerlara ait verilerin okunacağı (rs1 ve rs2) ve hangi adresteki registera (rd) yazılacağı d yine bu 32 bitlik komutun içerisinde yer almaktadır. Instruction Decoder, her bir komut içi birer tane olmak üzere toplamda 17 farklı enable sinyali üretmektedir. Bu üretilen sinyallerden hangisi lojik = 1 ise ALU'da o işlemin yapılacağı bölüm çalışmaktadır. Instruction Decoder kendi üzerine düşen işi yaptıktan sonra Control Unit'e acknowledge sinyali gönderir ve FSM içerisindeki bir sonraki duruma geçiş yapılır. Bu sayede 1 tane request ve 1 tane acknowledge sinyali ile sadece 2 cycle da Decode işlemi bitmiştir. Figure 5'de Instruction Decoder'ın lojik tasarımı gösterilmiştir.</p>
 
 <div align="center">
-    <img src="images/instruction_decoder.png" width=600 height=600>
+    <img src="images/instruction_decoder.png" width=800 height=700>
     <p><em>Figure 5. Instruction Decoder'a Ait Lojik Devre Tasarımı</em></p>
 </div>
 
 <p align="justify">ALU; Instruction Decoder'ın decode ettiği, 5 bit uzunlukt olan ve Register File'da hangi adresteki register'ların okunacağını Instruction Decoder ile Register File arasındaki bağlantı ile sağlamıştır. Bu sayede Register File'dan gelen 32 bitlik veriler (rs1 ve rs2) de ALU ile bağlantı kurabilmektedir. ALU'ya aynı zamanda 17 farklı komuta ait enable sinyali de gelemktedir. ALU, kendisine gelen bu enable sinyallerinden sadece lojik = 1 olan sinyale ait işlemleri yapmaktadır. ALU hem Register File'a hem de Data Memory'e 32 bitlik veri yazabilir. ALU kendi üzerine düşen işi yaptıktan sonra Control Unit'e acknowledge sinyali gönderir ve FSM içerisindeki bir sonraki duruma geçiş yapılır. Bu sayede 1 tane request ve 1 tane acknowledge sinyali ile sadece 2 cycle da Execute işlemi bitmiştir. Burada dikket edilmesi gereken kısım, ALU'da işlemlerin yürütülme kısmının tamamen asenkron olması ancak acknowledge sinyalinin gönderilmesinin senkron olmasıdır. Figure 6'de ALU'nun lojik tasarımı gösterilmiştir.</p>
 
 <div align="center">
-    <img src="images/alu.png" width=600 height=600>
+    <img src="images/alu.png" width=800 height=700>
     <p><em>Figure 6. ALU'ya Ait Lojik Devre Tasarımı</em></p>
 </div>
 
