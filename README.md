@@ -215,3 +215,10 @@ void main(){
     <img src="images/fpga_kaynak.png" width=800 height=700>
     <p><em>Figure 18. FPGA Üzerined Kaynak ve Güç Tüketiminin Gösterimi</em></p>
 </div>
+
+<h3 align="left">11. CPU Tasarımının Şematiği</h3>
+
+<div align="center">
+    <img src="images/cpudesign.png" width=800 height=700>
+    <p><em>Figure 19. CPU Tasarımına Ait Şematik</em></p>
+</div>
