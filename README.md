@@ -173,3 +173,23 @@ void main(){
     <img src="images/sim_final.png" width=1000 height=600>
     <p><em>Figure 12. RISC-V Assembly Koduna Ait Son Komuta Ait Zaman Diyagramının Gösterimi</em></p>
 </div>
+
+<h3 align="left">6. Statik Zaman Analizi Testleri</h3>
+
+<p align="justify">Simülasyon testleri tasarımı yapılan lojik devrelerin istenilen saat frekansında çalaışıp çalaışmayacağını göstermektedir. Statik Zaman Analizi kapsamında Flip-Flop'lar da metastability durumunun tespiti için kullanılan iki farklı metrik bulunmaktadır: Setup Time ve Hold Time. Herhangi bir metastability durumun oluşmaması için verinin bir sonraki saat sinyalinden daha önce bir süre de FLip-Flop'un kapısına gelmesi gerekir (Setup Time). Herhangi bir metastability durumunun oluşmaması için verinin saat sinyali Flip-Flop'un kapısına geldikten en az ne kadar süre daha Flip-FLop'un giriş bacağında sabit kalması gerekir (Hold Time). Figure 13'de Statik Zaman Analizi'ne ait testlerin başarıyla geçildiği görülmektedir. Setup Time için örnek vermek gerekirse tasarımdaki en yavaş veri yolu bile gereken süreden yaklaşık 5 ns daha erken Flip-FLop'un kapısına gelmiştir.</p>
+
+<div align="center">
+    <img src="images/sta_test.png" width=600 height=600>
+    <p><em>Figure 13. Statik Zaman Analizi Test Sonuçları</em></p>
+</div>
+
+<h3 align="left">7. Tasarımın FPGA'ya Aktarılması (Implementation)</h3>
+
+<p align="justify">Tasarımı yapılan CPU'nun FPGA üzerindeki implementasyonu Figure 14 ve Figure 15'de gösterilmiştir.</p>
+
+<div align="center">
+    <img src="images/imp_fpga.png" width=600 height=600>
+    <p><em>Figure 14. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
+    <img src="images/imp_fpga2.png" width=600 height=600>
+    <p><em>>Figure 15. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
+</div>
