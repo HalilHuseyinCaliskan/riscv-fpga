@@ -195,3 +195,11 @@ void main(){
     <img src="images/imp_fpga3.png" width=600 height=600>
     <p><em>Figure 16. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
 </div>
+
+<h3 align="left">8. QSPI Üzerinden Boot İşlemi</h3>
+
+<p align="justify">Tasarıma ait Bitstream dosyasıları FPGA içerisindeki geçici bellekler olan SRAM'lere yüklenir ve FPGA'ya ait güç kesilince tasarım da kaybolur. Tasarımın sürekli olara FPGA'da kalabilmesi için ise geçici olmayan bir bellek olan Flash Memeory'e ihtiyaç vardır. Bu yüzden FPGA hızlı bir şekilde boot edilebilmesi hem de tasarımın Flash Memory'de kalıcı olabilmesi için her saat kenarının yükselen keanrında veri aktarımı yapabilen QSPI (4 hat x 40MHz) haberleşme protokolü kullanılmıştır. Boot işleminin süresinin Bitsream dosyası belirlemekte olup Flash Memeory' yüklenen Bitsream dosyası QSPI ile hızlı bir şekilde okunur ve 0.1 saniye de sistem boot edilir.</p>
+
+<h3 align="left">9. Logic Analizor Test Sonuçları</h3>
+
+<p align="justify">Simülasyon ve Statik Zaman Analizi ile yapılan testlerin ardından tasarımın FPGA üzerinde gerçek zamanlı bir şekilde çalıştığını görmek için FPGA'nın içinde bulunan ILA (Integrated Logıc Analizor) kullanılmıştır. ILA ile yapılan testlere göre tasarım FPGA içinde doğru şekilde çalıaşbilmektedir. </p>
