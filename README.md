@@ -185,11 +185,13 @@ void main(){
 
 <h3 align="left">7. Tasarımın FPGA'ya Aktarılması (Implementation)</h3>
 
-<p align="justify">Tasarımı yapılan CPU'nun FPGA üzerindeki implementasyonu Figure 14 ve Figure 15'de gösterilmiştir.</p>
+<p align="justify">Tasarımı yapılan CPU'nun FPGA üzerindeki implementasyonu Figure 14, Figure 15 ve Figure 16'da gösterilmiştir.</p>
 
 <div align="center">
-    <img src="images/imp_fpga.png" width=600 height=600>
+    <img src="images/imp_fpga.png" width=300 height=300>
     <p><em>Figure 14. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
     <img src="images/imp_fpga2.png" width=600 height=600>
     <p><em>>Figure 15. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
+    <img src="images/imp_fpga3.png" width=600 height=600>
+    <p><em>>Figure 16. FPGA'de Tasarımın Gösterimi (Place and Route)</em></p>
 </div>
