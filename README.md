@@ -202,7 +202,7 @@ void main(){
 
 <h3 align="left">9. Logic Analyzer Test Sonuçları</h3>
 
-<p align="justify">Simülasyon ve Statik Zaman Analizi ile yapılan testlerin ardından tasarımın FPGA üzerinde gerçek zamanlı bir şekilde çalıştığını görmek için FPGA'nın içinde bulunan ILA (Integrated Logıc Analyzer) kullanılmıştır. ILA ile yapılan testlere göre tasarım FPGA içinde doğru şekilde çalıaşbilmektedir.</p>
+<p align="justify">Simülasyon ve Statik Zaman Analizi ile yapılan testlerin ardından tasarımın FPGA üzerinde gerçek zamanlı bir şekilde çalıştığını görmek için FPGA'nın içinde bulunan ILA (Integrated Logic Analyzer) kullanılmıştır. ILA ile yapılan testlere göre tasarım FPGA içinde doğru şekilde çalıaşbilmektedir.</p>
 
 <div align="center">
     <img src="images/ila.png" width=1000 height=700>
