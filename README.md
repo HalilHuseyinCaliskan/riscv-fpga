@@ -76,7 +76,7 @@
     <p><em>Figure 7. Register File'a Ait Lojik Devre Tasarımı</em></p>
 </div>
 
-<p align="justify">Data Memory, Distributed RAM ile tasarlanmıştır. Data Memory'e ALU üzerinden saat sinyaline senkron olacak şekilde yazma ve Register File'a veri yüklemek için asenkron okuma işlemi yapılabilmektedir. Data Memory kendi üzerine düşen işi yaptıktan sonra Control Unit'e acknowledge sinyali gönderir ve FSM içerisindeki bir sonraki duruma geçiş yapılır. Bu sayede 1 tane request ve 1 tane acknowledge sinyali ile ALU üzerinden Data Memory'e veri yazma işlemi olan Memory Write, sadece 2 cycle da bitmiştir. Bir diğer işlem olan Write Back ise Data Memeory'deki verinin Register File'a geri gönderilmesi demek olup Memoey Write veya Write Back durumları bittikten sonra bir sonrakin komutun Fetch işlemine geçiş yapılamaktadır. Böylece 1 komuutn Instruction Cycle döngüsü bitmiştir ve diğer komutun Instruction Cycle döngüsüne geçiş yapılmıştır. Figure 8'de Data Memory'nin lojik tasarımı gösterilmiştir.</p>
+<p align="justify">Data Memory, Distributed RAM ile tasarlanmıştır. Data Memory'e ALU üzerinden saat sinyaline senkron olacak şekilde yazma ve Register File'a veri yüklemek için senkron yazma işlemi yapılabilmektedir. Data Memory kendi üzerine düşen işi yaptıktan sonra Control Unit'e acknowledge sinyali gönderir ve FSM içerisindeki bir sonraki duruma geçiş yapılır. Bu sayede 1 tane request ve 1 tane acknowledge sinyali ile ALU üzerinden Data Memory'e veri yazma işlemi olan Memory Write, sadece 2 cycle da bitmiştir. Bir diğer işlem olan Write Back ise Data Memeory'deki verinin Register File'a geri gönderilmesi demek olup Memoey Write veya Write Back durumları bittikten sonra bir sonrakin komutun Fetch işlemine geçiş yapılamaktadır. Böylece 1 komuutn Instruction Cycle döngüsü bitmiştir ve diğer komutun Instruction Cycle döngüsüne geçiş yapılmıştır. Figure 8'de Data Memory'nin lojik tasarımı gösterilmiştir.</p>
 
 <div align="center">
     <img src="images/data_memory.png" width=600 height=600>
@@ -198,7 +198,7 @@ void main(){
 
 <h3 align="left">8. QSPI Üzerinden Boot İşlemi</h3>
 
-<p align="justify">Tasarıma ait Bitstream dosyasıları FPGA içerisindeki geçici bellekler olan SRAM'lere yüklenir ve FPGA'ya ait güç kesilince tasarım da kaybolur. Tasarımın sürekli olara FPGA'da kalabilmesi için ise geçici olmayan bir bellek olan Flash Memory'e ihtiyaç vardır. Bu yüzden FPGA hızlı bir şekilde boot edilebilmesi hem de tasarımın Flash Memory'de kalıcı olabilmesi için her saat kenarının yükselen keanrında veri aktarımı yapabilen QSPI (4 hat x 40MHz) haberleşme protokolü kullanılmıştır. Boot işleminin süresinin Bitsream dosyası belirlemekte olup Flash Memory' yüklenen Bitsream dosyası QSPI ile hızlı bir şekilde okunur ve 0.1 saniye de sistem boot edilir.</p>
+<p align="justify">Tasarıma ait Bitstream dosyaları FPGA içerisindeki geçici bellekler olan SRAM'lere yüklenir ve FPGA'ya ait güç kesilince tasarım da kaybolur. Tasarımın sürekli olara FPGA'da kalabilmesi için ise geçici olmayan bir bellek olan Flash Memory'e ihtiyaç vardır. Bu yüzden FPGA hızlı bir şekilde boot edilebilmesi hem de tasarımın Flash Memory'de kalıcı olabilmesi için her saat kenarının yükselen keanrında veri aktarımı yapabilen QSPI (4 hat x 40MHz) haberleşme protokolü kullanılmıştır. Boot işleminin süresinin Bitsream dosyası belirlemekte olup Flash Memory' yüklenen Bitsream dosyası QSPI ile hızlı bir şekilde okunur ve 0.1 saniye de sistem boot edilir.</p>
 
 <h3 align="left">9. Logic Analyzer Test Sonuçları</h3>
 
