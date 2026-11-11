@@ -17,7 +17,7 @@
 <p align="justify">Instruction Decoder toplamda 17 farklı RISC-V komutunu decode edebilmekte olup ALU da decode edilen veriler üzerine 17 farklı işlem yapabilmektedir. Toplamda 5 farklı Buyruk (R, I, S, B, J) türüne sahip komutlar decode edilebilemkte olup RISC-V'ın I ve M uzantılarını desteklemektedir. Hangi komutların decode edildiği ve hangi buyruk türüne sahip olduğu Tablo 1'de gösterilmiştir.</p>
 
 <div align="center">
-    <img src="images/riscv_komut.png" width=600 height=600>
+    <img src="images/riscv_komut.png" width=300 height=300>
     <p><em>Figure 1. Çalıştırılabilir RISC-V Komutları ve Buyruk Türleri</em></p>
 </div>
 
